@@ -1,9 +1,18 @@
 unit cModelItem;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-   Forms, IniFiles, Windows, Classes, SysUtils,
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Forms, FileUtil, IniFiles, Classes, SysUtils,
    cSFR, cUtils;
 
 type
@@ -171,7 +180,7 @@ var
    Position:integer;
    Found:boolean;
 begin
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       FGLDVersion := '';
       Found := false;
@@ -221,7 +230,7 @@ var
    Line:string;
    BlockStart, CandidateStart, Finished:boolean;
 begin
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       Finished := false;
       CandidateStart := false;
@@ -281,7 +290,7 @@ var
 begin
    pOptions := '';
    pComments := '';
-   if FileExists(FIncFilename) then
+   if FileExistsUTF8(FIncFilename) { *Converted from FileExists* } then
    begin
       Options := TStringList.Create;
       Finished := false;
@@ -718,7 +727,7 @@ var
    Line:string;
    RegStart:boolean;
 begin
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       RegStart := false;
       Lines := TStringList.Create;
@@ -820,7 +829,7 @@ begin
    FIvtLength := 0;
    FAIvtBase := 0;
    FAIvtLength := 0;
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       Found := false;
       Lines := TStringList.Create;
@@ -888,7 +897,7 @@ begin
    FYRAMStart := 0;
    FDMARamStart := 0;
    FDMARam := 0;
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       Found := false;
       Lines := TStringList.Create;
@@ -1133,7 +1142,7 @@ var
 begin
    FFuses.Clear;
    FDefaultFuses.Clear;
-   if FileExists(FIncFilename) then
+   if FileExistsUTF8(FIncFilename) { *Converted from FileExists* } then
    begin
       Values := TStringList.Create;
       NewLines := TStringList.Create;
@@ -1271,7 +1280,7 @@ var
    StartOfISR:boolean;
    SFRAddr:integer;
 begin
-   if FileExists(FGLDFilename) then
+   if FileExistsUTF8(FGLDFilename) { *Converted from FileExists* } then
    begin
       SFRAddr := 0;
       ISRIndex := 0;

@@ -1,13 +1,25 @@
 unit UnitMain;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Registry, StdCtrls, cDialogs,
-  cModel, ClipBrd, ExtCtrls;
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Registry, StdCtrls,
+  cModel, ClipBrd, ExtCtrls, FileUtil;
 
 type
+
+  { TMainForm }
+
   TMainForm = class(TForm)
     ButtonConvert: TButton;
     MemoDevices: TMemo;
@@ -18,6 +30,7 @@ type
     ButtonChangeXC16Folder: TButton;
     Bevel3: TBevel;
     Panel1: TPanel;
+    FFolderDialog: TSelectDirectoryDialog;
     StatusBar: TLabel;
     CheckBoxDSPIC: TCheckBox;
     procedure FormCreate(Sender: TObject);
@@ -29,7 +42,7 @@ type
     procedure ButtonChangeXC16FolderClick(Sender: TObject);
     procedure CheckBoxDsPICClick(Sender: TObject);
   private
-     FFolderDialog:TFolderDlg;
+     //FFolderDialog:TFolderDlg;
      FApplicationPath:string;
      FNewIncludePathBasic:string;
      FIncludes:TStringList;
@@ -39,8 +52,8 @@ type
      procedure SaveToRegistry;
      procedure MakeDeviceCommaList;
      procedure CreateNewFolders;
-     procedure OnModelSaved(pSender:TObject;pName:string);
-     procedure OnModelFound(pSender:TObject;pName:string);
+     procedure OnModelSaved(pSender:TObject;pName:ansistring);
+     procedure OnModelFound(pSender:TObject;pName:ansistring);
   public
     { Public declarations }
   end;
@@ -50,7 +63,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.dfm}
 
 const
    RegSwordfishIDE            = '\Software\MecaniqueUK\SystemConvert16';
@@ -72,7 +85,7 @@ begin
    FModels.OnModelSaved := OnModelSaved;
    FModels.OnModelFound := OnModelFound;
    FModels.dsPIC33 := CheckBoxDSPIC.Checked;
-   FFolderDialog := TFolderDlg.Create(self);
+   //FFolderDialog := TFolderDlg.Create(self);
    FApplicationPath := ExtractFilePath(Application.ExeName);
    FNewIncludePathBASIC := FApplicationPath + 'NewIncludeBASIC';
    LoadFromRegistry;
@@ -122,7 +135,7 @@ begin
       begin
          try
             FModels.XC16Path := lowercase(ReadString(RegXC16Path));
-            if DirExists(FModels.XC16Path) then
+            if DirectoryExistsUTF8(FModels.XC16Path) then
                LabelXC16Path.Caption := FModels.XC16Path;
          except
             LabelXC16Path.Caption := 'program files\microchip\xc16\v1.11';
@@ -170,8 +183,8 @@ end;
 }
 procedure TMainForm.CreateNewFolders;
 begin
-   if not DirExists(FNewIncludePathBASIC) then
-      CreateDir(FNewIncludePathBASIC);
+   if not DirectoryExistsUTF8(FNewIncludePathBASIC) then
+      CreateDirUTF8(FNewIncludePathBASIC); { *Converted from CreateDir* }
 end;
 {
 ****************************************************************************
@@ -264,7 +277,7 @@ end;
 * Purpose :                                                                *
 ****************************************************************************
 }
-procedure TMainForm.OnModelSaved(pSender:TObject;pName:string);
+procedure TMainForm.OnModelSaved(pSender:TObject;pName:ansistring);
 begin
    if FIncludes.Count = 0 then
       FIncludes.Add('device = ' + pName)
@@ -282,7 +295,7 @@ end;
 * Purpose :                                                                *
 ****************************************************************************
 }
-procedure TMainForm.OnModelFound(pSender:TObject;pName:string);
+procedure TMainForm.OnModelFound(pSender:TObject;pName:ansistring);
 begin
    if FIncludes.Count = 0 then
       FIncludes.Add('device = ' + pName)
@@ -324,11 +337,11 @@ begin
    with FFolderDialog do
    begin
       Title := 'Please select the folder that contains the XC16 Compiler';
-      Selection := FModels.XC16Path;
+      InitialDir := FModels.XC16Path;
       Caption := 'Select Folder';
       if Execute then
       begin
-         FModels.XC16Path := lowercase(FFolderDialog.DisplayName);
+         FModels.XC16Path := lowercase(FFolderDialog.FileName);
          LabelXC16Path.Caption := FModels.XC16Path;
       end;
    end;

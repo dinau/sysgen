@@ -1,14 +1,23 @@
 unit cModel;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-   Windows, Classes, SysUtils, FileCtrl, INIFiles,
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Classes, SysUtils, FileCtrl, FileUtil, INIFiles,
    cModelItem;
 
 type
-   TOnModelSaved = procedure(pSender:TObject;pName:string) of object;
-   TOnModelFound = procedure(pSender:TObject;pName:string) of object;
+   TOnModelSaved = procedure(pSender:TObject;pName:ansistring) of object;
+   TOnModelFound = procedure(pSender:TObject;pName:ansistring) of object;
    TModels = class(TObject)
    private
       FModels:TList;
@@ -127,10 +136,10 @@ var
    DeviceList:TStringList;
 begin
  //  Clear;
-   if DirectoryExists(pIncAndGldPath) then
+   if DirectoryExistsUTF8(pIncAndGldPath) { *Converted from DirectoryExists* } then
    begin
       DeviceList := TStringList.Create;
-      Found := FindFirst(pIncAndGLDPath + '\inc\*.inc', faAnyFile, SearchRec);
+      Found := FindFirstUTF8(pIncAndGLDPath + '\inc\*.inc',faAnyFile,SearchRec); { *Converted from FindFirst* }
       if Found = 0 then
       begin
          while Found = 0 do
@@ -139,7 +148,7 @@ begin
                Device := Uppercase(GetFilenameNoExt(SearchRec.Name));
                if Pos('P', Device) = 1 then
                begin
-                  if FileExists(pIncAndGLDPath + '\gld\' + Device + '.gld') then
+                  if FileExistsUTF8(pIncAndGLDPath + '\gld\' + Device + '.gld') { *Converted from FileExists* } then
                   begin
                      Device := Copy(Device,2,Length(Device));
 
@@ -156,10 +165,10 @@ begin
                      end;
                   end;
                end;
-               Found := FindNext(SearchRec);
+               Found := FindNextUTF8(SearchRec); { *Converted from FindNext* }
             end;
       end;
-      FindClose(SearchRec);
+      FindCloseUTF8(SearchRec); { *Converted from FindClose* }
 
       for Index := 0 to DeviceList.Count - 1 do
       begin
@@ -185,7 +194,7 @@ end;
 procedure TModels.BuildCandidates;
 begin
    Clear;
-   if DirectoryExists(FXC16Path) then
+   if DirectoryExistsUTF8(FXC16Path) { *Converted from DirectoryExists* } then
    begin
       Clear;
       FindCandidates(FXC16Path + '\Support\PIC24E');
@@ -223,7 +232,7 @@ var
    Lines:TStringList;
 begin
    pPathBASIC := pPathBASIC + '\';
-   if DirectoryExists(pPathBASIC) then
+   if DirectoryExistsUTF8(pPathBASIC) { *Converted from DirectoryExists* } then
    begin
       Lines := TStringList.Create;
       for Index := 0 to FModels.Count - 1 do

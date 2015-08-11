@@ -1,10 +1,18 @@
 unit cUtils;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-   Windows,
-   SysUtils,
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  SysUtils,
    Classes;
 
 function GetName(pLine:string):string;
