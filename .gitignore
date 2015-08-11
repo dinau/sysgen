@@ -1,0 +1,16 @@
+*.o
+*~
+*.rej
+*.org
+GPATH
+*TAGS
+*.dcu
+tags
+*.exe
+*.dbg
+*.ppu
+*.or
+*.compiled
+
+NewIncludeBASIC/
+
