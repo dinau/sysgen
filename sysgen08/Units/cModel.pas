@@ -1,9 +1,18 @@
 unit cModel;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-   Windows, Classes, SysUtils, FileCtrl, INIFiles,
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Classes, SysUtils, FileCtrl, FileUtil, INIFiles,
    cModelItem, gDeviceInfo;
 
 type
@@ -118,7 +127,7 @@ begin
    for Index := 0 to DeviceInfo.DevList.Count - 1 do
    begin
       Device := DeviceInfo.DevList.Strings[Index];
-      if FileExists(FMPASMPath + '\p' + Device + '.inc') then
+      if FileExistsUTF8(FMPASMPath + '\p' + Device + '.inc') { *Converted from FileExists* } then
       begin
          Model := TModelItem.Create(FMPASMPath,DeviceInfo.DevList.Strings[Index]);
          if Model.IsValid then
@@ -158,7 +167,7 @@ var
    Lines:TStringList;
 begin
    pPathBASIC := pPathBASIC + '\';
-   if DirectoryExists(pPathBASIC) then
+   if DirectoryExistsUTF8(pPathBASIC) { *Converted from DirectoryExists* } then
    begin
       Lines := TStringList.Create;
       for Index := 0 to FModels.Count - 1 do

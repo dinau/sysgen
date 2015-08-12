@@ -1,5 +1,9 @@
 unit cModelItem;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 { JM v1.2
 // - change to use mpasm's 8bit_device.info file instead of the MPLAB .dev files
 // - the DeviceInfo class is now used to get config settings instead of relying
@@ -18,8 +22,13 @@ unit cModelItem;
 interface
 
 uses
-   Forms, IniFiles, Windows, Classes, SysUtils,
-   cSFR, cBadRam, gDeviceInfo, cUtils;
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Forms, FileUtil, IniFiles, Classes, SysUtils,
+   cSFR, cBadRAM, gDeviceInfo, cUtils;
 
 type
    TModelItem = class(TObject)
@@ -719,7 +728,7 @@ begin
    FEthernet := 0;
    FCan := 0;
 
-   if FileExists(FMPASMFilename) then
+   if FileExistsUTF8(FMPASMFilename) { *Converted from FileExists* } then
    begin
       FBitnames.Clear;
       RegStart := false;
@@ -817,7 +826,7 @@ var
    Line,NewLine:string;
    Index,Position:integer;
 begin
-   if FileExists(FMPASMFilename) then
+   if FileExistsUTF8(FMPASMFilename) { *Converted from FileExists* } then
    begin
       Lines := TStringList.Create;
       Lines.LoadFromFile(FMPASMFilename);

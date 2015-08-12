@@ -1,5 +1,9 @@
 unit UnitMain;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 {
 // JM v1.2
 // - revamp to use mpasm 8bit_device.info file
@@ -9,11 +13,19 @@ unit UnitMain;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls,
-  Forms, Dialogs, Registry, StdCtrls, ClipBrd, ExtCtrls,
-  cDialogs, cModel, cDeviceInfo, gDeviceInfo;
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Messages, SysUtils, Classes, Graphics, Controls,
+  Forms, Dialogs, Registry, StdCtrls, ClipBrd, ExtCtrls, FileUtil,
+  cModel, cDeviceInfo, gDeviceInfo;
 
 type
+
+  { TMainForm }
+
   TMainForm = class(TForm)
     Label1: TLabel;
     LabelIncludePath: TLabel;
@@ -22,6 +34,7 @@ type
     MemoDevices: TMemo;
     ButtonGetCandidates: TButton;
     Panel1: TPanel;
+    FFolderDialog: TSelectDirectoryDialog;
     StatusBar: TLabel;
     Bevel1: TBevel;
     procedure FormCreate(Sender: TObject);
@@ -32,7 +45,7 @@ type
     procedure ButtonGetCandidatesClick(Sender: TObject);
     procedure ButtonCopyClick(Sender: TObject);
   private
-     FFolderDialog:TFolderDlg;
+     //FFolderDialog:TFolderDlg;
      FApplicationPath:string;
      FNewIncludePathBasic:string;
      FIncludes:TStringList;
@@ -53,7 +66,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.dfm}
 
 const
    RegSwordfishIDE            = '\Software\MecaniqueUK\SystemConvert';
@@ -78,7 +91,7 @@ begin
    // JM - init new module
    DeviceInfo := TDeviceInfo.Create;
 
-   FFolderDialog := TFolderDlg.Create(self);
+   //FFolderDialog := TFolderDlg.Create(self);
    FApplicationPath := ExtractFilePath(Application.ExeName);
    FNewIncludePathBASIC := FApplicationPath + 'NewIncludeBASIC';
    LoadFromRegistry;
@@ -128,7 +141,7 @@ begin
       begin
          try
             FModels.MicrochipPath := Uppercase(ReadString(RegMicrochipPath));
-            if DirExists(FModels.MicrochipPath) then
+            if DirectoryExistsUTF8(FModels.MicrochipPath) then
                LabelIncludePath.Caption := FModels.MicrochipPath;
          except
             LabelIncludePath.Caption := '[not specified]';
@@ -176,8 +189,8 @@ end;
 }
 procedure TMainForm.CreateNewFolders;
 begin
-   if not DirExists(FNewIncludePathBASIC) then
-      CreateDir(FNewIncludePathBASIC);
+   if not DirectoryExistsUTF8(FNewIncludePathBASIC) then
+      CreateDirUTF8(FNewIncludePathBASIC); { *Converted from CreateDir* }
 end;
 {
 ****************************************************************************
@@ -306,11 +319,11 @@ begin
    with FFolderDialog do
    begin
       Title := 'Please select the folder that contains the Microchip MPASM/MPASMX files';
-      Selection := FModels.MicrochipPath;
+      InitialDir := FModels.MicrochipPath;
       Caption := 'Select Folder';
       if Execute then
       begin
-         FModels.MicrochipPath := uppercase(FFolderDialog.DisplayName);
+         FModels.MicrochipPath := uppercase(FFolderDialog.FileName);
          LabelIncludePath.Caption := FModels.MicrochipPath;
       end;
    end;

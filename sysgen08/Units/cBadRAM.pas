@@ -1,9 +1,18 @@
 unit cBadRAM;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 interface
 
 uses
-   Windows, Classes, SysUtils;
+{$IFnDEF FPC}
+  Windows,
+{$ELSE}
+  LCLIntf, LCLType, LMessages,
+{$ENDIF}
+  Classes, SysUtils;
 
 type
    TBadRAM = class(TObject)

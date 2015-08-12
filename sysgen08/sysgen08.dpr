@@ -1,9 +1,16 @@
 program sysgen08;
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+{$ENDIF}
+
 uses
+{$IFnDEF FPC}
+{$ELSE}
+  Interfaces,
+{$ENDIF}
   Forms,
   UnitMain in 'UnitMain.pas' {MainForm},
-  cDialogs in 'Units\cDialogs.pas',
   cModel in 'Units\cModel.pas',
   cModelItem in 'Units\cModelItem.pas',
   cDeviceInfo in 'Units\cDeviceInfo.pas',
@@ -12,7 +19,7 @@ uses
   cBadRAM in 'Units\cBadRAM.pas',
   cUtils in 'Units\cUtils.pas';
 
-{$R *.RES}
+{$R *.res}
 
 begin
   Application.Initialize;
