@@ -1,0 +1,541 @@
+format of mpasm 8bit_device.info file
+
+
+// file version
+<RES_FILE_VERSION_INFO_TYPE><1.14>
+
+//
+// PARTS_INDEX_TYPE field decoding
+//
+<PARTS_INDEX_TYPE><10F200><823b>#################
+<10F200>			device name
+<823b>				file offset of device PART_INFO_TYPE
+#################	padding (each PARTS_INDEX_TYPE is +50 chars/line)
+
+
+// pic18 PART_INFO_TYPE list from mpasm <RES_FILE_VERSION_INFO_TYPE><1.14>
+<PART_INFO_TYPE><8242><PIC18C242><18xxxx><2><1><3fff><10><ff><0><7f><0><6>
+<PART_INFO_TYPE><8252><PIC18C252><18xxxx><2><1><7fff><10><ff><0><7f><0><6>
+<PART_INFO_TYPE><8442><PIC18C442><18xxxx><2><1><3fff><10><ff><0><7f><0><6>
+<PART_INFO_TYPE><8452><PIC18C452><18xxxx><2><1><7fff><10><ff><0><7f><0><6>
+<PART_INFO_TYPE><8601><PIC18C601><18xxxx><2><1><1fffff><10><ff><0><7f><0><4>
+<PART_INFO_TYPE><8658><PIC18C658><18xxxx><2><1><7fff><10><ff><0><5f><0><5>
+<PART_INFO_TYPE><8801><PIC18C801><18xxxx><2><1><1fffff><10><ff><0><7f><0><4>
+<PART_INFO_TYPE><8858><PIC18C858><18xxxx><2><1><7fff><10><ff><0><5f><0><5>
+<PART_INFO_TYPE><a122><PIC18F1220><18xxxx><2><1><fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><1230><PIC18F1230><18xxxx><6><1><fff><10><ff><7f><7f><0><c>
+<PART_INFO_TYPE><a132><PIC18F1320><18xxxx><2><1><1fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><1330><PIC18F1330><18xxxx><6><1><1fff><10><ff><7f><7f><0><c>
+<PART_INFO_TYPE><b132><PIC18F13K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><a135><PIC18F13K50><18xxxx><6><1><1fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><b142><PIC18F14K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><c142><PIC18F14K22LIN><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><a145><PIC18F14K50><18xxxx><6><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><a222><PIC18F2220><18xxxx><2><1><fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2221><PIC18F2221><18xxxx><6><1><fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><a232><PIC18F2320><18xxxx><2><1><1fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2321><PIC18F2321><18xxxx><6><1><1fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2331><PIC18F2331><18xxxx><2><1><1fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><d320><PIC18F23K20><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d322><PIC18F23K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><2410><PIC18F2410><18xxxx><6><1><3fff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><242f><PIC18F242><18xxxx><2><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2420><PIC18F2420><18xxxx><6><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2423><PIC18F2423><18xxxx><6><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2431><PIC18F2431><18xxxx><2><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><2439><PIC18F2439><18xxxx><2><1><2fff><10><ff><ff><7f><0><a>
+<PART_INFO_TYPE><2450><PIC18F2450><18xxxx><6><1><3fff><10><ff><0><5f><0><c>
+<PART_INFO_TYPE><2455><PIC18F2455><18xxxx><6><1><5fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><2458><PIC18F2458><18xxxx><6><1><5fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><8248><PIC18F248><18xxxx><2><1><3fff><10><ff><ff><5f><0><a>
+<PART_INFO_TYPE><2480><PIC18F2480><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d410><PIC18F24J10><18xxxx><7><1><3ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><d411><PIC18F24J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d450><PIC18F24J50><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d420><PIC18F24K20><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d422><PIC18F24K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d451><PIC18F24K50><18xxxx><6><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><2510><PIC18F2510><18xxxx><6><1><7fff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><2515><PIC18F2515><18xxxx><6><1><bfff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><252f><PIC18F252><18xxxx><2><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2520><PIC18F2520><18xxxx><6><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2523><PIC18F2523><18xxxx><6><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><2525><PIC18F2525><18xxxx><6><1><bfff><10><ff><3ff><7f><0><b>
+<PART_INFO_TYPE><2539><PIC18F2539><18xxxx><2><1><5fff><10><ff><ff><7f><0><a>
+<PART_INFO_TYPE><2550><PIC18F2550><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><2553><PIC18F2553><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><8258><PIC18F258><18xxxx><2><1><7fff><10><ff><ff><5f><0><a>
+<PART_INFO_TYPE><2580><PIC18F2580><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><2585><PIC18F2585><18xxxx><6><1><bfff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><d510><PIC18F25J10><18xxxx><7><1><7ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><d511><PIC18F25J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d550><PIC18F25J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d520><PIC18F25K20><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d522><PIC18F25K22><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d551><PIC18F25K50><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><a580><PIC18F25K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><2610><PIC18F2610><18xxxx><6><1><ffff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><2620><PIC18F2620><18xxxx><6><1><ffff><10><ff><3ff><7f><0><b>
+<PART_INFO_TYPE><2680><PIC18F2680><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><2682><PIC18F2682><18xxxx><6><1><13fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><2685><PIC18F2685><18xxxx><6><1><17fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><d611><PIC18F26J11><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d616><PIC18F26J13><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d650><PIC18F26J50><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d655><PIC18F26J53><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d620><PIC18F26K20><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><d622><PIC18F26K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><a680><PIC18F26K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><d711><PIC18F27J13><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><d750><PIC18F27J53><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><a422><PIC18F4220><18xxxx><2><1><fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4221><PIC18F4221><18xxxx><6><1><fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><a432><PIC18F4320><18xxxx><2><1><1fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4321><PIC18F4321><18xxxx><6><1><1fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4331><PIC18F4331><18xxxx><2><1><1fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><e320><PIC18F43K20><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e322><PIC18F43K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><4410><PIC18F4410><18xxxx><6><1><3fff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><442f><PIC18F442><18xxxx><2><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4420><PIC18F4420><18xxxx><6><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4423><PIC18F4423><18xxxx><6><1><3fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4431><PIC18F4431><18xxxx><2><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><4439><PIC18F4439><18xxxx><2><1><2fff><10><ff><ff><7f><0><a>
+<PART_INFO_TYPE><4450><PIC18F4450><18xxxx><6><1><3fff><10><ff><0><5f><0><c>
+<PART_INFO_TYPE><4455><PIC18F4455><18xxxx><6><1><5fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><4458><PIC18F4458><18xxxx><6><1><5fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><8448><PIC18F448><18xxxx><2><1><3fff><10><ff><ff><5f><0><a>
+<PART_INFO_TYPE><4480><PIC18F4480><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e410><PIC18F44J10><18xxxx><7><1><3ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><e411><PIC18F44J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e450><PIC18F44J50><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e420><PIC18F44K20><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e422><PIC18F44K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><4510><PIC18F4510><18xxxx><6><1><7fff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><4515><PIC18F4515><18xxxx><6><1><bfff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><452f><PIC18F452><18xxxx><2><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4520><PIC18F4520><18xxxx><6><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4523><PIC18F4523><18xxxx><6><1><7fff><10><ff><ff><7f><0><b>
+<PART_INFO_TYPE><4525><PIC18F4525><18xxxx><6><1><bfff><10><ff><3ff><7f><0><b>
+<PART_INFO_TYPE><4539><PIC18F4539><18xxxx><2><1><5fff><10><ff><ff><7f><0><a>
+<PART_INFO_TYPE><4550><PIC18F4550><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><4553><PIC18F4553><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><8458><PIC18F458><18xxxx><2><1><7fff><10><ff><ff><5f><0><a>
+<PART_INFO_TYPE><4580><PIC18F4580><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><4585><PIC18F4585><18xxxx><6><1><bfff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><e510><PIC18F45J10><18xxxx><7><1><7ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><e511><PIC18F45J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e550><PIC18F45J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e520><PIC18F45K20><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e522><PIC18F45K22><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e551><PIC18F45K50><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><b580><PIC18F45K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><4610><PIC18F4610><18xxxx><6><1><ffff><10><ff><0><7f><0><b>
+<PART_INFO_TYPE><4620><PIC18F4620><18xxxx><6><1><ffff><10><ff><3ff><7f><0><b>
+<PART_INFO_TYPE><4680><PIC18F4680><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><4682><PIC18F4682><18xxxx><6><1><13fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><4685><PIC18F4685><18xxxx><6><1><17fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><e611><PIC18F46J11><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e616><PIC18F46J13><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e650><PIC18F46J50><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e655><PIC18F46J53><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e620><PIC18F46K20><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><e622><PIC18F46K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><b680><PIC18F46K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><e711><PIC18F47J13><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><e750><PIC18F47J53><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><6310><PIC18F6310><18xxxx><6><1><1fff><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><6390><PIC18F6390><18xxxx><6><1><1fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6393><PIC18F6393><18xxxx><6><1><1fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6311><PIC18F63J11><18xxxx><7><1><1ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b390><PIC18F63J90><18xxxx><7><1><1ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6410><PIC18F6410><18xxxx><6><1><3fff><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><6490><PIC18F6490><18xxxx><6><1><3fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6493><PIC18F6493><18xxxx><6><1><3fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6411><PIC18F64J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b490><PIC18F64J90><18xxxx><7><1><3ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><a652><PIC18F6520><18xxxx><2><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><6525><PIC18F6525><18xxxx><2><1><bfff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><6527><PIC18F6527><18xxxx><6><1><bfff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><6585><PIC18F6585><18xxxx><2><1><bfff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b510><PIC18F65J10><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6511><PIC18F65J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b515><PIC18F65J15><18xxxx><7><1><bff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b550><PIC18F65J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b590><PIC18F65J90><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6594><PIC18F65J94><18xxxx><7><1><7fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><6522><PIC18F65K22><18xxxx><6><1><7fff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><c580><PIC18F65K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b591><PIC18F65K90><18xxxx><6><1><7fff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><a662><PIC18F6620><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><a621><PIC18F6621><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><f622><PIC18F6622><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><f625><PIC18F6627><18xxxx><6><1><17fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><a628><PIC18F6628><18xxxx><6><1><17fff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><6680><PIC18F6680><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b610><PIC18F66J10><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b611><PIC18F66J11><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b615><PIC18F66J15><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b616><PIC18F66J16><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b650><PIC18F66J50><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b655><PIC18F66J55><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b660><PIC18F66J60><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b665><PIC18F66J65><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b690><PIC18F66J90><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6693><PIC18F66J93><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6694><PIC18F66J94><18xxxx><7><1><ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><6699><PIC18F66J99><18xxxx><7><1><17fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><b622><PIC18F66K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><c680><PIC18F66K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b691><PIC18F66K90><18xxxx><6><1><ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><a672><PIC18F6720><18xxxx><2><1><1ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><6721><PIC18F6722><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><6723><PIC18F6723><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><b710><PIC18F67J10><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b711><PIC18F67J11><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b750><PIC18F67J50><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><b760><PIC18F67J60><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6790><PIC18F67J90><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6793><PIC18F67J93><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><6794><PIC18F67J94><18xxxx><7><1><1ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><6722><PIC18F67K22><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><b790><PIC18F67K90><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><8310><PIC18F8310><18xxxx><6><1><1fff><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><8390><PIC18F8390><18xxxx><6><1><1fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8393><PIC18F8393><18xxxx><6><1><1fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8311><PIC18F83J11><18xxxx><7><1><1ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c390><PIC18F83J90><18xxxx><7><1><1ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8410><PIC18F8410><18xxxx><6><1><3fff><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><8490><PIC18F8490><18xxxx><6><1><3fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8493><PIC18F8493><18xxxx><6><1><3fff><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8411><PIC18F84J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c490><PIC18F84J90><18xxxx><7><1><3ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><a852><PIC18F8520><18xxxx><2><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8525><PIC18F8525><18xxxx><2><1><bfff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8527><PIC18F8527><18xxxx><6><1><bfff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8585><PIC18F8585><18xxxx><2><1><bfff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><c510><PIC18F85J10><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8511><PIC18F85J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c515><PIC18F85J15><18xxxx><7><1><bff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c550><PIC18F85J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c590><PIC18F85J90><18xxxx><7><1><7ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8594><PIC18F85J94><18xxxx><7><1><7fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><8522><PIC18F85K22><18xxxx><6><1><7fff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><c591><PIC18F85K90><18xxxx><6><1><7fff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><a862><PIC18F8620><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8621><PIC18F8621><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8622><PIC18F8622><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8625><PIC18F8627><18xxxx><6><1><17fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8628><PIC18F8628><18xxxx><6><1><17fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8680><PIC18F8680><18xxxx><2><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><c610><PIC18F86J10><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c611><PIC18F86J11><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c615><PIC18F86J15><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c616><PIC18F86J16><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c650><PIC18F86J50><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c655><PIC18F86J55><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c660><PIC18F86J60><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c665><PIC18F86J65><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8672><PIC18F86J72><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8690><PIC18F86J90><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8693><PIC18F86J93><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8694><PIC18F86J94><18xxxx><7><1><ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><8699><PIC18F86J99><18xxxx><7><1><17fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><c622><PIC18F86K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><c690><PIC18F86K90><18xxxx><6><1><ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><a872><PIC18F8720><18xxxx><2><1><1ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8721><PIC18F8722><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8723><PIC18F8723><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><c710><PIC18F87J10><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c711><PIC18F87J11><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c750><PIC18F87J50><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><c760><PIC18F87J60><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8772><PIC18F87J72><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8790><PIC18F87J90><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8793><PIC18F87J93><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><8794><PIC18F87J94><18xxxx><7><1><1ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><8722><PIC18F87K22><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><c790><PIC18F87K90><18xxxx><6><1><1ffff><10><ff><3ff><5f><0><d>
+<PART_INFO_TYPE><9594><PIC18F95J94><18xxxx><7><1><7fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><d660><PIC18F96J60><18xxxx><7><1><fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><d665><PIC18F96J65><18xxxx><7><1><17ff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><9694><PIC18F96J94><18xxxx><7><1><ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><9699><PIC18F96J99><18xxxx><7><1><17fef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><d760><PIC18F97J60><18xxxx><7><1><1fff7><10><ff><0><5f><0><6>
+<PART_INFO_TYPE><9794><PIC18F97J94><18xxxx><7><1><1ffef><10><ff><0><5f><0><10>
+<PART_INFO_TYPE><a133><PIC18LF13K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d135><PIC18LF13K50><18xxxx><6><1><1fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><a142><PIC18LF14K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d145><PIC18LF14K50><18xxxx><6><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><b322><PIC18LF23K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><a241><PIC18LF24J10><18xxxx><7><1><3ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><b411><PIC18LF24J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b450><PIC18LF24J50><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b422><PIC18LF24K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d452><PIC18LF24K50><18xxxx><6><1><3fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><a251><PIC18LF25J10><18xxxx><7><1><7ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><b511><PIC18LF25J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b551><PIC18LF25J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b522><PIC18LF25K22><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><d552><PIC18LF25K50><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><d580><PIC18LF25K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b612><PIC18LF26J11><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b617><PIC18LF26J13><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b651><PIC18LF26J50><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b656><PIC18LF26J53><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><b623><PIC18LF26K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><d680><PIC18LF26K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><b712><PIC18LF27J13><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c753><PIC18LF27J53><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c322><PIC18LF43K22><18xxxx><6><1><1fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><a441><PIC18LF44J10><18xxxx><7><1><3ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><c411><PIC18LF44J11><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c450><PIC18LF44J50><18xxxx><7><1><3ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c422><PIC18LF44K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><a451><PIC18LF45J10><18xxxx><7><1><7ff7><10><ff><0><7f><0><5>
+<PART_INFO_TYPE><c511><PIC18LF45J11><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c551><PIC18LF45J50><18xxxx><7><1><7ff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c522><PIC18LF45K22><18xxxx><6><1><7fff><10><ff><ff><5f><0><b>
+<PART_INFO_TYPE><e552><PIC18LF45K50><18xxxx><6><1><7fff><10><ff><ff><5f><0><c>
+<PART_INFO_TYPE><e580><PIC18LF45K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><c612><PIC18LF46J11><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c617><PIC18LF46J13><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c651><PIC18LF46J50><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c656><PIC18LF46J53><18xxxx><7><1><fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c623><PIC18LF46K22><18xxxx><6><1><ffff><10><ff><3ff><5f><0><b>
+<PART_INFO_TYPE><e680><PIC18LF46K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><c712><PIC18LF47J13><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><c751><PIC18LF47J53><18xxxx><7><1><1fff7><10><ff><0><5f><0><8>
+<PART_INFO_TYPE><f580><PIC18LF65K80><18xxxx><6><1><7fff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><f680><PIC18LF66K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<PART_INFO_TYPE><8452><PIC18CXX><18xxxx><6><1><1fffff><10><ff><0><5f><0><0>
+
+
+
+
+//
+// example section
+//
+<PART_INFO_TYPE><d422><PIC18F24K22><18xxxx><6><1><3fff><10><ff><ff><5f><0><b>
+
+<CONFIGREG_INFO_TYPE><300001><0><25><5>
+<SWITCH_INFO_TYPE><FOSC><Oscillator Selection bits><f><e>
+<SETTING_VALUE_TYPE><LP><LP oscillator><0>
+<SETTING_VALUE_TYPE><XT><XT oscillator><1>
+<SETTING_VALUE_TYPE><HSHP><HS oscillator (high power > 16 MHz)><2>
+<SETTING_VALUE_TYPE><HSMP><HS oscillator (medium power 4-16 MHz)><3>
+<SETTING_VALUE_TYPE><ECHP><EC oscillator, CLKOUT function on OSC2 (high power, >16 MHz)><4>
+<SETTING_VALUE_TYPE><ECHPIO6><EC oscillator (high power, >16 MHz)><5>
+<SETTING_VALUE_TYPE><RC><External RC oscillator, CLKOUT function on OSC2><6>
+<SETTING_VALUE_TYPE><RCIO6><External RC oscillator><7>
+<SETTING_VALUE_TYPE><INTIO67><Internal oscillator block><8>
+<SETTING_VALUE_TYPE><INTIO7><Internal oscillator block, CLKOUT function on OSC2><9>
+<SETTING_VALUE_TYPE><ECMP><EC oscillator, CLKOUT function on OSC2 (medium power, 500 kHz-16 MHz)><a>
+<SETTING_VALUE_TYPE><ECMPIO6><EC oscillator (medium power, 500 kHz-16 MHz)><b>
+<SETTING_VALUE_TYPE><ECLP><EC oscillator, CLKOUT function on OSC2 (low power, <500 kHz)><c>
+<SETTING_VALUE_TYPE><ECLPIO6><EC oscillator (low power, <500 kHz)><d>
+<SWITCH_INFO_TYPE><PLLCFG><4X PLL Enable><10><2>
+<SETTING_VALUE_TYPE><OFF><Oscillator used directly><0>
+<SETTING_VALUE_TYPE><ON><Oscillator multiplied by 4><10>
+<SWITCH_INFO_TYPE><PRICLKEN><Primary clock enable bit><20><2>
+<SETTING_VALUE_TYPE><OFF><Primary clock can be disabled by software><0>
+<SETTING_VALUE_TYPE><ON><Primary clock enabled><20>
+<SWITCH_INFO_TYPE><FCMEN><Fail-Safe Clock Monitor Enable bit><40><2>
+<SETTING_VALUE_TYPE><OFF><Fail-Safe Clock Monitor disabled><0>
+<SETTING_VALUE_TYPE><ON><Fail-Safe Clock Monitor enabled><40>
+<SWITCH_INFO_TYPE><IESO><Internal/External Oscillator Switchover bit><80><2>
+<SETTING_VALUE_TYPE><OFF><Oscillator Switchover mode disabled><0>
+<SETTING_VALUE_TYPE><ON><Oscillator Switchover mode enabled><80>
+
+<CONFIGREG_INFO_TYPE><300002><0><1f><3>
+<SWITCH_INFO_TYPE><PWRTEN><Power-up Timer Enable bit><1><2>
+<SETTING_VALUE_TYPE><ON><Power up timer enabled><0>
+<SETTING_VALUE_TYPE><OFF><Power up timer disabled><1>
+<SWITCH_INFO_TYPE><BOREN><Brown-out Reset Enable bits><6><4>
+<SETTING_VALUE_TYPE><OFF><Brown-out Reset disabled in hardware and software><0>
+<SETTING_VALUE_TYPE><ON><Brown-out Reset enabled and controlled by software (SBOREN is enabled)><2>
+<SETTING_VALUE_TYPE><NOSLP><Brown-out Reset enabled in hardware only and disabled in Sleep mode (SBOREN is disabled)><4>
+<SETTING_VALUE_TYPE><SBORDIS><Brown-out Reset enabled in hardware only (SBOREN is disabled)><6>
+<SWITCH_INFO_TYPE><BORV><Brown Out Reset Voltage bits><18><4>
+<SETTING_VALUE_TYPE><285><VBOR set to 2.85 V nominal><0>
+<SETTING_VALUE_TYPE><250><VBOR set to 2.50 V nominal><8>
+<SETTING_VALUE_TYPE><220><VBOR set to 2.20 V nominal><10>
+<SETTING_VALUE_TYPE><190><VBOR set to 1.90 V nominal><18>
+
+<CONFIGREG_INFO_TYPE><300003><0><3f><2>
+<SWITCH_INFO_TYPE><WDTEN><Watchdog Timer Enable bits><3><4>
+<SETTING_VALUE_TYPE><OFF><Watch dog timer is always disabled. SWDTEN has no effect.><0>
+<SETTING_VALUE_TYPE><NOSLP><WDT is disabled in sleep, otherwise enabled. SWDTEN bit has no effect><1>
+<SETTING_VALUE_TYPE><SWON><WDT is controlled by SWDTEN bit of the WDTCON register><2>
+<SETTING_VALUE_TYPE><ON><WDT is always enabled. SWDTEN bit has no effect><3>
+<SWITCH_INFO_TYPE><WDTPS><Watchdog Timer Postscale Select bits><3c><10>
+<SETTING_VALUE_TYPE><1><1:1><0>
+<SETTING_VALUE_TYPE><2><1:2><4>
+<SETTING_VALUE_TYPE><4><1:4><8>
+<SETTING_VALUE_TYPE><8><1:8><c>
+<SETTING_VALUE_TYPE><16><1:16><10>
+<SETTING_VALUE_TYPE><32><1:32><14>
+<SETTING_VALUE_TYPE><64><1:64><18>
+<SETTING_VALUE_TYPE><128><1:128><1c>
+<SETTING_VALUE_TYPE><256><1:256><20>
+<SETTING_VALUE_TYPE><512><1:512><24>
+<SETTING_VALUE_TYPE><1024><1:1024><28>
+<SETTING_VALUE_TYPE><2048><1:2048><2c>
+<SETTING_VALUE_TYPE><4096><1:4096><30>
+<SETTING_VALUE_TYPE><8192><1:8192><34>
+<SETTING_VALUE_TYPE><16384><1:16384><38>
+<SETTING_VALUE_TYPE><32768><1:32768><3c>
+
+<CONFIGREG_INFO_TYPE><300005><0><bf><7>
+<SWITCH_INFO_TYPE><CCP2MX><CCP2 MUX bit><1><2>
+<SETTING_VALUE_TYPE><PORTB3><CCP2 input/output is multiplexed with RB3><0>
+<SETTING_VALUE_TYPE><PORTC1><CCP2 input/output is multiplexed with RC1><1>
+<SWITCH_INFO_TYPE><PBADEN><PORTB A/D Enable bit><2><2>
+<SETTING_VALUE_TYPE><OFF><PORTB<5:0> pins are configured as digital I/O on Reset><0>
+<SETTING_VALUE_TYPE><ON><PORTB<5:0> pins are configured as analog input channels on Reset><2>
+<SWITCH_INFO_TYPE><CCP3MX><P3A/CCP3 Mux bit><4><2>
+<SETTING_VALUE_TYPE><PORTC6><P3A/CCP3 input/output is mulitplexed with RC6><0>
+<SETTING_VALUE_TYPE><PORTB5><P3A/CCP3 input/output is multiplexed with RB5><4>
+<SWITCH_INFO_TYPE><HFOFST><HFINTOSC Fast Start-up><8><2>
+<SETTING_VALUE_TYPE><OFF><HFINTOSC output and ready status are delayed by the oscillator stable status><0>
+<SETTING_VALUE_TYPE><ON><HFINTOSC output and ready status are not delayed by the oscillator stable status><8>
+<SWITCH_INFO_TYPE><T3CMX><Timer3 Clock input mux bit><10><2>
+<SETTING_VALUE_TYPE><PORTB5><T3CKI is on RB5><0>
+<SETTING_VALUE_TYPE><PORTC0><T3CKI is on RC0><10>
+<SWITCH_INFO_TYPE><P2BMX><ECCP2 B output mux bit><20><2>
+<SETTING_VALUE_TYPE><PORTC0><P2B is on RC0><0>
+<SETTING_VALUE_TYPE><PORTB5><P2B is on RB5><20>
+<SWITCH_INFO_TYPE><MCLRE><MCLR Pin Enable bit><80><2>
+<SETTING_VALUE_TYPE><INTMCLR><RE3 input pin enabled; MCLR disabled><0>
+<SETTING_VALUE_TYPE><EXTMCLR><MCLR pin enabled, RE3 input pin disabled><80>
+
+<CONFIGREG_INFO_TYPE><300006><0><85><4>
+<SWITCH_INFO_TYPE><STVREN><Stack Full/Underflow Reset Enable bit><1><2>
+<SETTING_VALUE_TYPE><OFF><Stack full/underflow will not cause Reset><0>
+<SETTING_VALUE_TYPE><ON><Stack full/underflow will cause Reset><1>
+<SWITCH_INFO_TYPE><LVP><Single-Supply ICSP Enable bit><4><2>
+<SETTING_VALUE_TYPE><OFF><Single-Supply ICSP disabled><0>
+<SETTING_VALUE_TYPE><ON><Single-Supply ICSP enabled if MCLRE is also 1><4>
+<SWITCH_INFO_TYPE><XINST><Extended Instruction Set Enable bit><40><2>
+<SETTING_VALUE_TYPE><OFF><Instruction set extension and Indexed Addressing mode disabled (Legacy mode)><0>
+<SETTING_VALUE_TYPE><ON><Instruction set extension and Indexed Addressing mode enabled><40>
+<SWITCH_INFO_TYPE><DEBUG><Background Debug><80><2>
+<SETTING_VALUE_TYPE><ON><Enabled><0>
+<SETTING_VALUE_TYPE><OFF><Disabled><80>
+
+<CONFIGREG_INFO_TYPE><300008><0><3><2>
+<SWITCH_INFO_TYPE><CP0><Code Protection Block 0><1><2>
+<SETTING_VALUE_TYPE><ON><Block 0 (000800-001FFFh) code-protected><0>
+<SETTING_VALUE_TYPE><OFF><Block 0 (000800-001FFFh) not code-protected><1>
+<SWITCH_INFO_TYPE><CP1><Code Protection Block 1><2><2>
+<SETTING_VALUE_TYPE><ON><Block 1 (002000-003FFFh) code-protected><0>
+<SETTING_VALUE_TYPE><OFF><Block 1 (002000-003FFFh) not code-protected><2>
+
+<CONFIGREG_INFO_TYPE><300009><0><c0><2>
+<SWITCH_INFO_TYPE><CPB><Boot Block Code Protection bit><40><2>
+<SETTING_VALUE_TYPE><ON><Boot block (000000-0007FFh) code-protected><0>
+<SETTING_VALUE_TYPE><OFF><Boot block (000000-0007FFh) not code-protected><40>
+<SWITCH_INFO_TYPE><CPD><Data EEPROM Code Protection bit><80><2>
+<SETTING_VALUE_TYPE><ON><Data EEPROM code-protected><0>
+<SETTING_VALUE_TYPE><OFF><Data EEPROM not code-protected><80>
+
+<CONFIGREG_INFO_TYPE><30000a><0><3><2>
+<SWITCH_INFO_TYPE><WRT0><Write Protection Block 0><1><2>
+<SETTING_VALUE_TYPE><ON><Block 0 (000800-001FFFh) write-protected><0>
+<SETTING_VALUE_TYPE><OFF><Block 0 (000800-001FFFh) not write-protected><1>
+<SWITCH_INFO_TYPE><WRT1><Write Protection Block 1><2><2>
+<SETTING_VALUE_TYPE><ON><Block 1 (002000-003FFFh) write-protected><0>
+<SETTING_VALUE_TYPE><OFF><Block 1 (002000-003FFFh) not write-protected><2>
+
+<CONFIGREG_INFO_TYPE><30000b><0><e0><3>
+<SWITCH_INFO_TYPE><WRTC><Configuration Register Write Protection bit><20><2>
+<SETTING_VALUE_TYPE><ON><Configuration registers (300000-3000FFh) write-protected><0>
+<SETTING_VALUE_TYPE><OFF><Configuration registers (300000-3000FFh) not write-protected><20>
+<SWITCH_INFO_TYPE><WRTB><Boot Block Write Protection bit><40><2>
+<SETTING_VALUE_TYPE><ON><Boot Block (000000-0007FFh) write-protected><0>
+<SETTING_VALUE_TYPE><OFF><Boot Block (000000-0007FFh) not write-protected><40>
+<SWITCH_INFO_TYPE><WRTD><Data EEPROM Write Protection bit><80><2>
+<SETTING_VALUE_TYPE><ON><Data EEPROM write-protected><0>
+<SETTING_VALUE_TYPE><OFF><Data EEPROM not write-protected><80>
+
+<CONFIGREG_INFO_TYPE><30000c><0><3><2>
+<SWITCH_INFO_TYPE><EBTR0><Table Read Protection Block 0><1><2>
+<SETTING_VALUE_TYPE><ON><Block 0 (000800-001FFFh) protected from table reads executed in other blocks><0>
+<SETTING_VALUE_TYPE><OFF><Block 0 (000800-001FFFh) not protected from table reads executed in other blocks><1>
+<SWITCH_INFO_TYPE><EBTR1><Table Read Protection Block 1><2><2>
+<SETTING_VALUE_TYPE><ON><Block 1 (002000-003FFFh) protected from table reads executed in other blocks><0>
+<SETTING_VALUE_TYPE><OFF><Block 1 (002000-003FFFh) not protected from table reads executed in other blocks><2>
+
+<CONFIGREG_INFO_TYPE><30000d><0><40><1>
+<SWITCH_INFO_TYPE><EBTRB><Boot Block Table Read Protection bit><40><2>
+<SETTING_VALUE_TYPE><ON><Boot Block (000000-0007FFh) protected from table reads executed in other blocks><0>
+<SETTING_VALUE_TYPE><OFF><Boot Block (000000-0007FFh) not protected from table reads executed in other blocks><40>
+
+
+
+
+//
+// PART_INFO_TYPE field decoding
+//
+<PART_INFO_TYPE><a680><PIC18F26K80><18xxxx><6><1><ffff><10><ff><3ff><5f><0><c>
+<a680>			short identifier
+<PIC18F26K80>	device name
+<18xxxx>		device family
+<6>				2=no XINST, 6=supports XINST (some 18FxxJ parts have '7', but this is changed/corrected in mpasmx)
+<1>				all PIC18 devices
+<ffff>			maxrom (flash size)
+<10>			number of ram banks (same for all PIC18 devices... 16 banks) see note
+<ff>			size of ram bank-1  ie bank is 0->ff = 256 bytes/bank (same for all PIC18 devices)
+<3ff>			eeprom size
+<5f>			accessbank split
+<0>				all PIC18 devices
+<c>				number of config registers (CONFIGREG_INFO_TYPEs)
+
+note: total ram = num of banks x bank size (for pic18 it's just set to max of 16*256 = 4096)
+      the device asm .inc file contains the actual ram in the __MAXRAM and __BADRAM settings
+      for example (13K50)
+
+		   __MAXRAM  H'0FFF'
+		   __BADRAM  H'0100'-H'01FF'
+		   __BADRAM  H'0300'-H'0F52'
+		   __BADRAM  H'0F6A'
+
+      like total ram, __MAXRAM is always set to H'0FFF' (4096).
+      note that these figures include the SFR registers, so to get the amount of real "usable ram" 
+      you have to exclude the ram after the lowest address SFR register found in the .inc file 
+      (for the 13K50 this would start at 0F53). 
+      
+      to determine the sf _maxram you'd probably want to stop at either:
+      	- the first __BADRAM location, or
+      	- the first SFR register
+	  whichever is the lower address of the two
+
+
+//
+// CONFIGREG_INFO_TYPE field decoding
+//
+<CONFIGREG_INFO_TYPE><300001><0><25><5>
+<300001>			location
+<0>					all devices
+<25>				default/unprogrammed value
+<5>					number of config functions in this register (SWITCH_INFO_TYPEs)		
+
+
+//
+// SWITCH_INFO_TYPE field decoding
+//
+<SWITCH_INFO_TYPE><FOSC><Oscillator Selection bits><f><e>
+<FOSC>							name
+<Oscillator Selection bits>		desc
+<f>								bit mask
+<e>								number of settings (SETTING_VALUE_TYPEs)
+
+
+//
+// SETTING_VALUE_TYPE field decoding
+//
+<SETTING_VALUE_TYPE><ECLPIO6><EC oscillator (low power, <500 kHz)><d>
+<ECLPIO6>						setting		
+<EC oscillator (low power...)>	desc
+<d>								value
+
